@@ -1,13 +1,27 @@
 
     document.body.className= "beige";
-    let titulo = document.getElementById ("titulo");
+   
+   //menu opciones
+    let menuOpciones = document.createElement ("ul");
+    menuOpciones.innerHTML =  
+    "<li>Home</li> <li>Articulos</li> <li>Destacados</li> <li>Galeria</li>" ;
+    document.body.append(menuOpciones);
 
-    let bienvenida = document.getElementById("bienvenida");
-    let seccion = prompt ("ingrese la seccion que quiere ver (home, articulos, destacados,galeria");
+   
+    let tituloPrincipal = document.createElement("h1");
+    tituloPrincipal.innerHTML = "<h1>TIENDA DE ACCESORIOS PARA LAS MASCOTAS </h1>";
+    document.body.append(tituloPrincipal);
+ 
+    let tituloSecundario = document.createElement("h2");
+    tituloSecundario.innerHTML = "<h2></h2>";
+   document.body.append(tituloSecundario);
+    
+   
+   let seccion = prompt ("ingrese la seccion que quiere ver (home, articulos, destacados,galeria");
 
     if(seccion === "articulos" || seccion === "ARTICULOS"){
-        bienvenida.innerHTML= " BIENVENIDOS A LOS ARTICULOS DE MEJOR CALIDAD Y PRECIO";
-        bienvenida.className = "coral";
+        tituloSecundario.innerHTML= " ARTICULOS QUE OFRECEMOS";
+        
         class accesorio{
             constructor (nombre, precio, descripcion, imagen){
                 this.nombre=nombre;
@@ -45,23 +59,36 @@
             let div  = document.createElement("div");
             div.innerHTML = `  
             <h3> Accesorio : ${accesorio.nombre} </h3>
-             Precio : ${accesorio.precio}
              Descripcion : ${accesorio.descripcion}
-             <hr/>  
-             `
-            document.body.append(div);
-            })
+              `
+              document.body.append(div);
+            
+            let button = document.createElement("button");
+            button.innerHTML =  "<button>VER PRECIO</button>";
+            button.onclick = (accesorio) => { `Precio : ${accesorio.precio}`};
+            document.body.append(button);
+            
+            
+
+            })  
         
         
     } else { if(seccion === "destacados" || seccion === "DESTACADOS"){
-        bienvenida.innerHTML= "BIENVENIDOS A LOS ARTICULOS DESTACADOS";
-        bienvenida.className = "coral";
+        tituloSecundario.innerHTML= "ARTICULOS DESTACADOS";
+        
     } else if(seccion === "galeria" || seccion === "GALERIA "){
-       bienvenida.innerHTML= "Conozcan nuestros bellos clientes usando nuestros productos";
-       bienvenida.className = "coral";
+       tituloSecundario.innerHTML= "GALERIA: Nuestros bellos clientes usando nuestros productos";
+       
     }else { 
-       bienvenida.innerHTML= "NOSOTROS Y NUESTROS PRODUCTOS";
-       bienvenida.className = "rojo";
+       tituloSecundario.innerHTML= "HOME";
+       
+    }
+    }
 
-    }
-    }
+
+
+    let piePagina = document.getElementsByTagName("footer");
+    console.log (piePagina.innerHTML);
+
+    
+     
