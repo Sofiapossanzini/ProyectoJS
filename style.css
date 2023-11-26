@@ -1,10 +1,20 @@
-.coral{
-    background-color: coral;
+.fondo{
+    background-color: rgb(14, 11, 12);
+    color :rgb(208, 214, 214);
+    font-family: 'Poppins', sans-serif;
+    
 }
 
-.beige{
-    background-color: beige;
+.letra{
+    
+    color: rgb(239, 181, 198);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
-.rojo{
-    background-color: red;
+
+.formulario {
+    display: grid;
+    
+    justify-items: center;
+    align-items: center;
 }
